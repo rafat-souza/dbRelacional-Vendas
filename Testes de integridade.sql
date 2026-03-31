@@ -25,3 +25,24 @@ INSERT INTO Item_Pedido (id_pedido, id_produto, quantidade) VALUES
 (2, 2, 1);
 
 SELECT 'Depois da Trigger' AS Status, id_pedido, valor_total, id_cliente FROM Pedido;
+
+UPDATE Cliente 
+SET telefone = '11777777777' 
+WHERE id_cliente = 2;
+
+UPDATE Produto 
+SET preco = 2100.00 
+WHERE id_produto = 2;
+
+SELECT id_cliente, nome, telefone FROM Cliente WHERE id_cliente = 2;
+SELECT id_produto, nome, preco FROM Produto WHERE id_produto = 2;
+
+INSERT INTO Categoria (nome, descricao) VALUES 
+('Brinquedos', 'Categoria temporária para teste de delete');
+
+SELECT * FROM Categoria WHERE nome = 'Brinquedos';
+
+DELETE FROM Categoria 
+WHERE id_categoria = 3;
+
+SELECT * FROM Categoria;
