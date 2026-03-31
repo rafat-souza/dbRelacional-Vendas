@@ -37,3 +37,24 @@ CREATE TABLE Item_Pedido (
     FOREIGN KEY (id_pedido) REFERENCES Pedido(id_pedido),
     FOREIGN KEY (id_produto) REFERENCES Produto(id_produto)
 );
+
+DELIMITER //
+
+CREATE TRIGGER trg_atualiza_valor_pedido
+AFTER INSERT ON Item_Pedido
+FOR EACH ROW
+BEGIN
+    DECLARE v_preco DOUBLE;
+
+    -- Obtém o preço do produto que está sendo inserido no pedido
+    SELECT preco INTO v_preco 
+    FROM Produto 
+    WHERE id_produto = NEW.id_produto;
+
+    -- Atualiza o campo valor_total na tabela Pedido
+    UPDATE Pedido 
+    SET valor_total = valor_total + (v_preco * NEW.quantidade)
+    WHERE id_pedido = NEW.id_pedido;
+END//
+
+DELIMITER ;
