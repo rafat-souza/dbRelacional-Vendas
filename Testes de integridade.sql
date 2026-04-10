@@ -1,3 +1,8 @@
+SELECT * FROM Categoria;
+SELECT * FROM Pedido;
+SELECT * FROM Produto;
+SELECT * FROM Cliente;
+
 INSERT INTO Categoria (nome, descricao) VALUES 
 ('Eletrônicos', 'Dispositivos como celulares e computadores'),
 ('Vestuário', 'Roupas em geral');
@@ -60,8 +65,6 @@ SELECT * FROM Categoria WHERE nome = 'Brinquedos';
 
 DELETE FROM Categoria 
 WHERE id_categoria = 3;
-
-SELECT * FROM Categoria;
 
 INSERT INTO Categoria (nome, descricao) VALUES 
 ('Brinquedos', 'Brinquedos de todos os tipos');
