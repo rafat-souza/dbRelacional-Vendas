@@ -31,6 +31,8 @@ GRANT 'role_leitura' TO 'user_relatorio'@'localhost';
 
 SET DEFAULT ROLE ALL TO 'dba_admin'@'localhost', 'user_aplicacao'@'localhost', 'user_relatorio'@'localhost';
 
+FLUSH PRIVILEGES;
+
 -- Testes - Acesso negado
 -- Logado como user_relatorio'@'localhost
 SELECT * FROM Cliente;
@@ -38,4 +40,3 @@ SELECT * FROM vw_cliente_seguro;
 
 -- Logado como user_aplicacao'@'localhost
 DELETE FROM Categoria WHERE id_categoria = 1;
-FLUSH PRIVILEGES;
