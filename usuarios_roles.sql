@@ -35,13 +35,13 @@ FLUSH PRIVILEGES;
 
 -- Testes
 -- Logado como user_relatorio
-SELECT * FROM Cliente;
-SELECT * FROM vw_cliente_seguro;
+SELECT * FROM Cliente; -- Negado
+SELECT * FROM vw_cliente_seguro; -- Aprovado
 
 -- Logado como user_aplicacao
-DELETE FROM Categoria WHERE id_categoria = 1;
+DELETE FROM Categoria WHERE id_categoria = 1; -- Negado
 INSERT INTO Cliente (nome, email, telefone) VALUES 
-('Mariazinha', 'mariaa@gmail.com', '11950994979');
+('Mariazinha', 'mariaa@gmail.com', '11950994979'); -- Aprovado
 
 -- Logado como dba_admin
-DELETE FROM Produto WHERE id_produto = 15;
+DELETE FROM Produto WHERE id_produto = 15; -- Aprovado
