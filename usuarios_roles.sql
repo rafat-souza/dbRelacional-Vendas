@@ -19,6 +19,8 @@ GRANT SELECT ON SistemaVendas.Produto TO 'role_leitura';
 GRANT SELECT ON SistemaVendas.Item_Pedido TO 'role_leitura';
 GRANT SELECT ON SistemaVendas.Log_Auditoria_Preco TO 'role_leitura';
 GRANT SELECT ON SistemaVendas.vw_cliente_seguro TO 'role_leitura';
+GRANT SELECT ON SistemaVendas.Cliente TO 'role_leitura';
+REVOKE SELECT ON SistemaVendas.Cliente FROM 'role_leitura';
 
 -- Criação de usuários
 CREATE USER 'dba_admin'@'localhost' IDENTIFIED BY 'Admin!Forte2026';
